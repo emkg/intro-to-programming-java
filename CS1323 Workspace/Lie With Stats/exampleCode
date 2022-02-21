@@ -1,0 +1,187 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+
+/** This program exploits the ambiguity in the meaning of the word average to help
+ * the user lie with statistics.The program will calculate the mean, median, and mode
+ * and return the largest or smallest of these three values to the user.
+ * 
+ * @author Deborah Trytten
+ * @version 1.0
+ *
+ */
+public class LieWithStatistics 
+{
+
+	/** Run a program that asks for the name of a file that contains integer data and returns the largest or smallest
+	 * of the mean, median and mode of the data.
+	 * The format of the file is: # of elements, one integer to each line.
+	 * The program will request the file name from the keyboard, and ask the user whether they wish to have the largest
+	 * or smallest of the three values.
+	 * @param args The program has no command line arguments.
+	 */
+	public static void main(String[] args) throws FileNotFoundException
+	{
+		Scanner keyboard = new Scanner (System.in);
+		System.out.println("Please enter the name of the file that contains the data");
+		String fileName = keyboard.nextLine();
+		
+		// Get the data
+		int[] data = readDataFromFile(fileName);
+		
+		// Find the statistics
+		double mean = findMean(data);
+		double median = findMedian(data);
+		double mode = findMode(data);
+				
+		System.out.println("The mean is " + mean);
+		System.out.println("The median is " + median);
+		System.out.println("The mode is " + mode);
+		System.exit(0);
+		
+		System.out.println("Would you like the highest or lowest value?");
+		String value = keyboard.next();
+		
+		// Report the result to the user
+		if ("highest".equalsIgnoreCase(value))
+		{
+			System.out.println("The largest average is " + Math.max(mean, Math.max(median, mode)));
+		}
+		else
+		{
+			System.out.println("The smallest average is " + Math.min(mean, Math.min(median,mode)));
+		}
+	}
+
+	/** Find the mean value of the data in the array.  The mean is calculated by
+	 * summing the values in the array and dividing by the length of the array.
+	 * @param data The array of data.
+	 * @return The mean value.
+	 */
+	public static double findMean(int[] data)
+	{
+		double sum = 0.0;
+		for (int i=0; i<data.length; ++i)
+		{
+			sum += data[i];
+		}
+	
+		// This is floating point division because sum is a double
+		return sum/data.length;
+	}
+	
+	/** Find the median value in the array.  The median would be the middle value in 
+	 * a sorted array.  If the length of the array is even, the median is calculated
+	 * by finding the mean of the two values in the middle. This method does not
+	 * sort the array.
+	 * @param data The array of data. The order of data in the array is not changed by this method.
+	 * @return The median value.
+	 */
+	public static double findMedian(int[] data)
+	{
+		double medianSum = 0.0;
+		int medianCount = 0;
+		for (int value=0; value<data.length; ++value)
+		{
+			// Count the number of values that are smaller and larger
+			// than each value
+			int smaller = 0;
+			int larger = 0;
+			int equals = 0;
+			
+			for (int test=0; test<data.length; ++test)
+			{
+				if (data[test] < data[value])
+					++smaller;
+				else if (data[test] == data[value])
+					++equals;
+				else 
+					++larger;
+			}
+			
+			int half = data.length/2;
+			
+			// If we find one where the number of smaller values + # of equal
+			// values is greater than half, and the number of larger values +
+			// # of equal values is greater than half, then we've found one median
+			if (smaller+equals >= half && larger+equals >= half)
+			{
+				medianSum += data[value];
+				++medianCount; 
+			}
+			// Add the median to a summation value
+			// Keep track of the number of medians
+				
+		}
+		
+		// Average the medians found and return to user
+		return medianSum/medianCount;
+	}
+	
+	/** Return the mode of values in an array.  The mode is the value that occurs
+	 * most often.  If there are many modes, the mean of the modal values is given.
+	 * The array is not sorted by this method.
+	 * @param data The array of data. The order of data in the array is not changed by this method.
+	 * @return The mode of the data.
+	 */
+	public static double findMode(int[] data)
+	{
+		double modeSum = 0.0;
+		int modeCount = 0;
+		int maximumModeCount = 0;
+		
+		for (int value=0; value<data.length; ++value)
+		{
+			int countValues = 0;
+			// Find the number of times each value occurred in the array
+			for (int count = 0; count < data.length; ++count)
+			{
+				if (data[value] == data[count])
+				{
+					++countValues;
+				}
+			} // for count
+
+			// If our count is larger than the previous maximum, we need
+			// to replace the previous maximum
+			if (countValues > maximumModeCount)
+			{
+				modeCount = 1;
+				modeSum = data[value];
+				maximumModeCount = countValues;
+			}
+			// If our count is equal to the previous maximum, we need to
+			// increment our previous maximum
+			else if (countValues == maximumModeCount)
+			{
+				++modeCount;
+				modeSum = modeSum + data[value];
+			}
+
+		}
+		
+		return modeSum / modeCount;
+	}
+	
+	/** Read a data array integers from a file.  The file is formatted as follows.  The file
+	 * first contains a single integer giving the number of values in the file. Then
+	 * the 
+	 * @param filename The name of the file containing the data.
+	 * @return An array of integers that were in the file.
+	 * @throws FileNotFoundException If a file by the given name cannot be found.
+	 */
+	public static int[] readDataFromFile(String filename) throws FileNotFoundException
+	{		
+		Scanner file = new Scanner(new File(filename));
+		int length = file.nextInt();
+		
+		int[] result = new int[length];
+		for (int i=0; i<length; ++i)
+		{
+			result[i] = file.nextInt();
+		}
+		
+		return result;
+	}
+}

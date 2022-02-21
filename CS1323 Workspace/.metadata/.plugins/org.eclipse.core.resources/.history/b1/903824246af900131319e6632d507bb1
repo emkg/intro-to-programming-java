@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+/**Stores the data for a general greyhound rescue organization.
+ * 
+ * @author Emily
+ *
+ */
+public class GreyhoundRescue 
+{
+	private ArrayList<Greyhound> adoptableDogs; //dogs available for adoption
+	private static final String FILE_NAME = "greyhound.txt"; //the file where the available dogs are listed
+	
+	/**Construct a rescue with no dogs (initially).
+	 * 
+	 */
+	public GreyhoundRescue()
+	{
+		adoptableDogs = new ArrayList<Greyhound>();
+		
+	}
+
+	/**Reads the greyhound data from a source file.
+	 * 
+	 * @throws FileNotFoundException
+	 */
+	public void readGreyhoundsFromFile() throws FileNotFoundException
+	{
+		Scanner file = new Scanner(new File(FILE_NAME));
+
+		int size = file.nextInt(); //first line of file MUST be an int indicating the number of lines in the file for this to work
+		file.nextLine(); //moves the scanner to the next line to get rid of the previous int used to determine size	
+		
+		for(int i = 0; i < size; ++i)
+		{
+			//reads each line of the file--which are delimited greyhound data--as a single String
+			String line = file.nextLine();
+			//breaks each delimited line into a String Array of greyhound information
+			String[] greyhoundData = line.split(",");
+			//construct a Greyhound from each line using the greyhound data in the array
+			//data assembled into constructor via the String class trim command
+			Greyhound dog = new Greyhound(greyhoundData[0].trim(), Integer.parseInt(greyhoundData[1].trim()), greyhoundData[2].trim(),
+					YNU.valueOf(greyhoundData[3].trim()), YNU.valueOf(greyhoundData[4].trim()),YNU.valueOf(greyhoundData[5].trim()));
+			
+			//add each greyhound to the instance ArrayList
+			adoptableDogs.add(dog);		
+		}
+		
+		file.close();
+	}
+
+
+}
+

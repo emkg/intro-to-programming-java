@@ -1,0 +1,17 @@
+* In the upper section, each box is scored by summing the total number of dice faces matching that box. 
+ * 
+ * If a player scores a total of at least 63 points in these boxes, a bonus of 35 points is added to the 
+ * upper section score. 
+ * 
+ * Category	        Description     	                                    Score	              
+ * Three-Of-A-Kind	At least three dice showing the same face	           Sum of all dice	
+ * Four-Of-A-Kind	At least four dice showing the same face	           Sum of all dice	
+ * Full House	    A three-of-a-kind and a pair	                         25	
+ * Small Straight	Four sequential dice (1-2-3-4, 2-3-4-5, or 3-4-5-6)	     30	
+ * Large Straight	Five sequential dice (1-2-3-4-5 or 2-3-4-5-6)            40 
+ * Yahtzee	        All five dice showing the same face                      50 - First Yahtzee only	
+ * 
+ * Chance	        Any combination-- often acts as discard box for a turn 
+ *                  that will not fit in another category (thus the name), 
+ *                  although during a lucky game it can be used to record 
+ *                  a high score.	                                        Sum of all dice	

@@ -1,0 +1,40 @@
+counts the number of text messages per month and determines who your best friend is
+
+
+boundary cases:
+1 text
+all from one person
+ties
+
+
+
+methods
+
+readAddressesFromFile
+--input (parameter) : fileName
+--output (return type) : ArrayList<String>
+
+findMostCommonElement
+--input (parameter: ArrayList<String>)
+--output (return type) : String
+
+
+reading from file is like reading from user
+
+
+Scanner file = new Scanner(new File("Filename.txt"));
+
+
+algorithm is a sequence of steps that solve a problem.
+
+--sort data
+--count each name
+---have to keep track of count of each name instance
+---have to keep track of max count
+---have to keep track of the name associated with those matches
+
+element
+preivousElement
+elementCount
+maxCount
+maxElement

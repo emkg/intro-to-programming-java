@@ -1,0 +1,278 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MiniYahtzeeImproved 
+{
+
+	final static int TURNS = 6;
+	final static int DICE = 5;
+
+/** Play a game of mini-yahtzee.  The rules for the regular game are here:
+ * http://en.wikipedia.org/wiki/Yahtzee. We will play only with above the line scores.
+ * @param args This program has no command line arguments
+ */
+	public static void main(String[] args) 
+	{
+		Scanner keyboard = new Scanner(System.in);
+		String namePlayer1;
+		String namePlayer2;
+		System.out.println("Enter the first player's name");
+		namePlayer1 = keyboard.nextLine();
+		System.out.println("Enter the second player's name");
+		namePlayer2 = keyboard.nextLine();
+
+		playOneGame(namePlayer1, namePlayer2, keyboard);
+	}
+	
+
+/** Allow two players to play one game of Yahtzee.
+ * 
+ * @param name1 The first player's name.
+ * @param player1Score An array, initialized with -1s, containing the first player's score.
+ * @param name2 The second player's name.
+ * @param player2Score An array, inialized with -1s, containing the second player's score.
+ * @param keyboard A Scanner that is attached to the keyboard.
+ */
+	
+	public static void playOneGame(String name1, String name2, Scanner keyboard)
+	{
+		int[] playerOneScores;
+		int[] playerTwoScores;
+		int[] dice = new int[DICE];
+
+		playerOneScores = new int[TURNS];
+		playerTwoScores = new int[TURNS];
+
+    	// A -1 value means that the category has not been played
+
+		Arrays.fill(playerOneScores, -1);
+		Arrays.fill(playerTwoScores, -1);
+
+		// Play the game in turns				
+		// The game has one turn for every possible outcome
+		
+		for (int turns=0; turns < TURNS; ++turns)
+		{
+			// Players alternate playing
+			// There is no advantage to playing first
+
+			System.out.println(name1 + " it is your turn.");
+			playOneTurn(playerOneScores, dice, keyboard);
+			System.out.println(name2 + " it is your turn.");
+			playOneTurn(playerTwoScores, dice, keyboard);
+
+			reportWinner(name1, playerOneScores, name2, playerTwoScores);
+		}
+	}
+
+/** Report which of the two players has won the game.
+ * 
+ * @param name1 Name of the first player.
+ * @param player1Score An array with player 1's score by category.
+ * @param name2 Name of the second player.
+ * @param player2Score An array with player 2's score by category.
+ */
+	public static void reportWinner(String name1, int[] player1Score, String name2, int[] player2Score)
+	{
+	
+		// Find the winner
+		int score1 = calculateTotalScore(player1Score);
+		System.out.println(name1 + " your score is " + score1 + ".");
+		int score2 = calculateTotalScore(player2Score);
+		System.out.println(name2 + " your score is " + score2 + ".");
+	
+		if (score1 > score2)
+		{
+			System.out.println("Contratulations " + name1 + ".");
+		}
+		else if (score2 > score1)
+		{
+			System.out.println("Congratulations " + name2 + ".");
+		}
+		else
+		{
+			System.out.println("It's a tie.");
+		}
+	
+	}
+
+/** Let one player play one turn of Yahtzee.  A turn consists of a roll of 5 dice
+ * then second and third rolls of selected dice if the player wishes.
+ * @param score The score for the game.
+ * @param keyboard The Scanner object for user input.
+ */
+	public static void playOneTurn(int[] score, int[] dice, Scanner keyboard)
+	{
+		showCurrentScoreCard(score);
+		rollAllDice(dice);
+		showDice(dice);
+		reRollDice(dice, keyboard);
+		showDice(dice);
+		reRollDice(dice, keyboard);
+		showDice(dice);
+
+		int category = getCategory(score, keyboard);
+		// Score that category
+		score[category] = sumOfDice(dice, category+1); // category is unit indexed in the method
+	}
+	
+
+/** Ask user for a legal category. It is not legal to score a category that has already been scored,
+ * or to score one that is out of bounds.
+ * @param score The currrent score sheet, that is not changed.
+ * @param keyboard Scanner to interact with the user.
+ * @return A zero indexed category selected by the user.
+ */
+	public static int getCategory(int[] score, Scanner keyboard)
+	{
+		// Ask user for a category to score
+		System.out.println("Which category would you like to score in");
+		int category = keyboard.nextInt(); // unit indexed
+		keyboard.nextLine(); // get rid of return
+		
+		category = category - 1; // zero indexed
+
+		while (category < 0 || category >= TURNS || score[category] != -1)
+		{
+			System.out.println("That is not a legal category, remember you cannot rescore in a category");
+			System.out.println("Please enter the category you would like to score in");
+			category = keyboard.nextInt(); // unit indexed
+			keyboard.nextLine(); // get rid of new line
+			category = category - 1; // zero indexed
+		}
+
+		return category;
+	}
+		
+
+/** Allow the user to select which dice are rolled again.
+ * 
+ * @param dice An array containing the current values on the dice, before and after the reroll.
+ * @param keyboard A Scanner object that allows interaction with the keyboard.
+ */
+	
+	public static void reRollDice(int[] dice, Scanner keyboard)
+	{
+		System.out.println("Which dice would you like to reroll, enter -1 if you do not wish to reroll");
+		String inputLine = keyboard.nextLine();
+		Scanner line = new Scanner(inputLine);
+
+		while (line.hasNextInt())
+		{
+			int reRollValue = line.nextInt(); // unit indexed
+			
+			if (reRollValue == -1)
+				return;
+			if (reRollValue <= 0 || reRollValue > DICE)
+			{
+				System.out.println("That is not a legal value, no dice will be rolled again");
+			}
+			else
+			{
+				dice[reRollValue-1] = rollOneDie();
+			}
+		
+		}
+	
+	} // end reRollDice
+	
+
+/** Roll one die. 
+ * 
+ * @return A randomly selected value between 1 and 6 (inclusive). 
+ */
+	public static int rollOneDie()
+	{
+		return (int)(Math.random()*6.0) + 1;
+	}
+
+/** Calculate the total score.  A value of -1 indicates
+ * that a category has not yet been used and should not
+ * be counted.
+ * @param score An array containing the current scores.
+ * @return
+ */
+	public static int calculateTotalScore(int[] score)
+	{
+		int sum = 0;
+		
+		// Add up everything that is not -1
+		for (int index = 0; index < score.length; ++index)
+		{
+			// Scores of -1 flag unused rows
+			if (score[index] != -1)	
+			{
+				sum = sum + score[index];
+			}				
+		}
+
+		return sum;
+	}
+	
+	
+/** Find the sum of the dice using yahtzee rules. Only
+ * dice containing the given number are counted.
+ * @param dice An array containing the values on the dice.
+ * @param number The number of the value that is to be counted.
+ * @return
+ */
+	public static int sumOfDice(int[] dice, int number)
+	{
+		int sum = 0;
+		
+		for (int index = 0; index < dice.length; ++index)
+		{
+			// Only dice that equal the given number count
+			if (dice[index] == number)
+			{
+				sum = sum + dice[index];
+			}
+		
+		}
+		
+		return sum;
+	}
+	
+	
+
+/** Show the value on the dice to the user.
+ *	 
+ * @param dice An array containing all of the dice.
+ */
+	public static void showDice(int[] dice)
+	{
+		for (int index = 0; index < dice.length; ++index)
+		{
+			System.out.println((index+1) + ". " + dice[index]);
+		}
+	}	
+
+/** Roll all of the dice.
+ *
+ * @param dice The rolled dice values are stored here.
+ */
+	public static void rollAllDice(int dice[])
+	{
+		for (int index = 0; index < dice.length; ++index)
+		{
+			dice[index] = rollOneDie();
+
+		}
+	}
+
+/** Show the user their current score.
+ * 
+ * @param score The array containing the user scores.
+ */
+	public static void showCurrentScoreCard(int[] score)
+	{
+		for (int count = 0; count < score.length; ++count)
+		{
+			if (score[count] != -1)
+				System.out.println("Current score for die " + (count+1) + " is " + score[count]);
+			else
+				System.out.println("Category " + (count+1) + " has not been used yet");
+		}
+	}
+
+}

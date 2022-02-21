@@ -1,0 +1,270 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public 
+
+class SearchRefinement 
+
+{
+
+	public static void main(String[] args) throws FileNotFoundException
+	
+	{
+
+	Scanner keyboard = new Scanner(System.in);
+		
+		String fileName;		
+ 		//This could be put in a loop to allow multiple files to be searched
+		
+		System.out.println("Please enter the name of the file");
+		
+		fileName = keyboard.nextLine();
+		
+		
+		ArrayList<String> data;  // Notice--no constructor call here--constructed in method
+		
+		data = readDataFromFile(fileName);
+
+		
+		performSearchRefinement(data, keyboard);
+	
+	}
+
+	
+/** Read data from the file, one line at a time and put it in an ArrayList.
+ * 	 
+ * @param fileName The name of the file. This file should be in the Project directory	 
+ * on eclipse.	 
+ * @return An ArrayList with the lines of the file each stored in a String.	 
+ * @throws FileNotFoundException If the file is not where it is expected to be.
+ */
+	
+public static ArrayList<String> readDataFromFile(String fileName) throws FileNotFoundException
+	
+	{
+		
+		ArrayList<String> result = new ArrayList<String>();
+
+		Scanner file = new Scanner(new File(fileName));
+
+		
+// Read the file one line at a time and transfer the data to the newly constructed
+
+		//ArrayList
+		
+		while (file.hasNextLine())
+
+		{
+
+			String line = file.nextLine();
+
+			result.add(line);
+
+		}
+		
+		file.close();
+
+		return result;
+
+	}
+	
+	
+/** Remove any element that does not contain the target String from the 
+	 
+ * given ArrayList. At the end of this method, only Strings that have
+	
+ * target somewhere in them should be returned. The elements will retain
+	
+ * their original order.
+	
+ * 
+	
+ * @param source May or may not contain the target.
+	
+ * @param target A value to be sought.
+	
+ * @return A newly constructed object with only Strings that contain target.
+	
+ * 
+	
+ */
+	
+	public static ArrayList<String> search(ArrayList<String> source, String target)
+	
+	{
+		
+		ArrayList<String> results = new ArrayList<String> ();
+
+		
+for (String s: source)
+
+		{
+			
+			if (s.contains(target))
+			
+			{
+
+				results.add(s);
+
+			}
+		
+		}
+
+		
+		return results;
+
+	}
+	
+	
+/** Show an ArrayList<String>, one line at a time, on the command line.
+	 
+ * @param source The ArrayList to be displayed.
+	 
+ */
+	 
+	public static void showResult(ArrayList<String> data)
+	 
+	{
+
+		 if (data.size() == 0)
+		
+		 {
+			 
+			System.out.println("There are no results to display");
+		
+			 return;
+
+		 }
+		 
+		 
+
+		// Use a for-each loop, just to be cool!
+ 
+		 for (String s: data)
+
+		 {
+			
+			 System.out.println(s);
+
+		 }
+	 
+	}
+	
+	 
+/** This method is the admittedly ugly user interface for the search. The user is allowed
+	 
+ * to repeatedly refine the search or return to a previous result.  There is modest
+	 
+ * error checking.  A known problem is that the user cannot search for the word "back".
+	 
+ * 
+	 
+ * @param data The data that is to be searched.
+	 
+ * @param keyboard A Scanner connected to the keyboard for interaction with the user.
+	 
+ */
+	 
+
+	public static void performSearchRefinement(ArrayList<String> data, Scanner keyboard)
+	
+	 {
+	
+		final int SIZE = 10;
+
+			
+		// Notice Weird Java Syntax--can't use the generic here
+
+		ArrayList<String>[] previousSearches = new ArrayList[SIZE];
+			
+		int size = 0;  
+		// Using an array forces us to store and maintain size
+
+		String answer = "YES"; 
+		// to get in while loop the first time
+
+		// Notice that as the logic for this method became complicated, I added in
+		// extra comments.  This helps anyone who has to maintain the code make
+		// more sense of it.  It would not be a bad idea to write some smaller methods
+
+		// that could be called here.
+
+		// Allow the user to refine the search
+
+		while (answer.equalsIgnoreCase("YES"))
+
+			{
+
+				System.out.println("Enter search refinement or back to return to previous");
+		
+				answer = keyboard.nextLine();
+		
+	
+				if (!answer.equalsIgnoreCase("back"))  // refining search
+
+					{
+
+						if (size < SIZE) // There is enough space in the array
+					
+						{
+	
+						previousSearches[size] = data;
+	
+						size = size+1;
+
+						}
+
+						else  // no more space in the array
+
+						{
+						
+							System.out.println("Backup is disabled because the search is too large");
+									}
+					
+				
+						data = search(data, answer);
+
+						showResult(data);
+				
+					}
+	
+				else // going back
+				
+					{
+	
+					if (size >= 1)
+					
+						{
+
+							data = previousSearches[size-1];
+																previousSearches[size-1] = null;
+
+							size = size -1;
+
+							showResult(data);
+
+						}
+
+						else
+
+						{
+
+							System.out.println("There is no previous data to go back to");
+											}
+
+					}	
+				
+				
+						
+				System.out.println("Do you want to continue? Yes or No");
+				
+				answer = keyboard.nextLine();
+
+
+			} // end while
+	 
+	}	
+
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>40</x>
+      <y>20</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Frog
+--
+-row: int
+-col: int
+_+ SYMBOL: char_
+--
++Frog(row: int, col: int)
++moveUp(): void
++moveDown(): void
++moveLeft(): void
++moveDown(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>10</x>
+      <y>230</y>
+      <w>310</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Grid
+--
+-grid: char[][]
+_+ ROWS: int_
+_+ COLS: int_
+--
++Grid()
++clearGrid(): void
++showGrid(): void
++setGrid(row: int, col: int, symbol: char): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>390</x>
+      <y>240</y>
+      <w>340</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
+-frog: Frog
+-trucks: Truck
+-grid: Grid
+--
++Controller()
++moveTrucks(): void
++moveFrog(input: InputStreamReader): void
++frogWins(): boolean
++frogOutOfBounds(): boolean
++frogAndTrucksCollide(): boolean
++clearScreen(): void
++displayGame(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>260</x>
+      <y>20</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Truck
+--
+-row: int
+-leftCol: int
+-rightCol: int
+-isRight: boolean
+-symbol: char
+--
++Truck(row: int, col: int, right: boolean)
++move(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

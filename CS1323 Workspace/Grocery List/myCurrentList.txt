@@ -1,0 +1,4 @@
+peanut butter #food
+toothpaste #bathroom
+soap #bathroom
+pancakes #food

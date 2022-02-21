@@ -1,0 +1,11 @@
+Plan			Monthly Cost 			# of Minutes		Additional Minutes
+1				9.99					100					.05
+2				14.99					101					.07
+3				19.99					102					.10
+4				24.99					103					.15
+5				29.99					104					.20
+
+
+Rotate order of data to make each position the smallest.
+
+Plan 1 is cheapest.

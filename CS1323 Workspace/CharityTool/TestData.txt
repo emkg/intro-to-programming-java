@@ -1,0 +1,12 @@
+donation type - value
+
+cash - $100
+items - 2 shirts worth $2, $4
+items, cash - pants worth $3, $5, $7; and $50 
+none
+
+
+totals
+
+cash - $150
+items - 5, worth $21

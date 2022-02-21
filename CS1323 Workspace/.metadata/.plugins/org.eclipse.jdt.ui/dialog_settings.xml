@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="JavaSE-1.7" key="org.eclipse.jdt.ui.last.selected.execution.enviroment"/>
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
+	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
+	<item value="2" key="org.eclipse.jdt.ui.last.selected.jre.kind2"/>
+	<section name="javadoc">
+		<item value="public" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Refined Search\javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="C:\Program Files (x86)\Java\jdk1.8.0\bin\javadoc.exe" key="javadoc_command_history"/>
+		<item value="1.7" key="source"/>
+		<item value="true" key="version"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Refined Search\doc" key="destdir"/>
+		<item value="false" key="openinbrowser"/>
+		<section name="projects">
+			<section name="Craps Number One">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Craps Number One\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Craps Number One\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Craps with Methods">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Craps with Methods\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Craps with Methods\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Texan Infiltration">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Texan Infiltration\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Texan Infiltration\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Weather Guesser">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Weather Guesser\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Weather Guesser\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Sample">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Sample\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Sample\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Cell Phone Final">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Cell Phone Final\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Cell Phone Final\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Laudible.com">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Laudible.com\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Laudible.com\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Glamazon.com">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Glamazon.com\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Glamazon.com\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Refined Search">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Refined Search\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Refined Search\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Granola Bars Machine">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Granola Bars Machine\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Granola Bars Machine\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Drop the Lowest Mid-Term Grade">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Drop the Lowest Mid-Term Grade\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Drop the Lowest Mid-Term Grade\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="GUIUtilities">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\GUIUtilities\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\GUIUtilities\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Hall of Fame">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Hall of Fame\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Hall of Fame\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Best Friend">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Best Friend\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Best Friend\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="BOGOF Pay Best Shoes">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\BOGOF Pay Best Shoes\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\BOGOF Pay Best Shoes\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Cell Phone 5">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Cell Phone 5\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Cell Phone 5\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Cell Phone Iteration 3">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Cell Phone Iteration 3\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Cell Phone Iteration 3\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Collections Class Experiments">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Collections Class Experiments\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Collections Class Experiments\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Grocery List">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Grocery List\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Grocery List\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Words with Acquaintences">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Words with Acquaintences\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Words with Acquaintences\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Yazi">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Yazi\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Yazi\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Target Heart Rate">
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Target Heart Rate\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Emily\Desktop\CS1323 Workspace\Target Heart Rate\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+		</section>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
+		<item value="2" key="layout"/>
+		<item value="true" key="group_libraries"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;packageExplorer group_libraries=&quot;1&quot; layout=&quot;2&quot; linkWithEditor=&quot;0&quot; rootMode=&quot;1&quot; workingSetName=&quot;Aggregate for window 1389971625137&quot;&gt;&#x0D;&#x0A;&lt;customFilters userDefinedPatternsEnabled=&quot;false&quot;&gt;&#x0D;&#x0A;&lt;xmlDefinedFilters&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.StaticsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.pde.ui.BinaryProjectFilter1&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.pde.ui.ExternalPluginLibrariesFilter1&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.FieldsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;/xmlDefinedFilters&gt;&#x0D;&#x0A;&lt;/customFilters&gt;&#x0D;&#x0A;&lt;/packageExplorer&gt;" key="memento"/>
+		<item value="false" key="linkWithEditor"/>
+		<item value="1" key="rootMode"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="JavadocWizardDialog">
+		<item value="616" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="616" key="DIALOG_HEIGHT"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+		<item value="352" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="JavaSearchPage">
+		<item value="0" key="HISTORY_SIZE"/>
+		<item value="false" key="CASE_SENSITIVE"/>
+		<item value="11" key="INCLUDE_MASK"/>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="360" key="DIALOG_X_ORIGIN"/>
+			<item value="59" key="DIALOG_Y_ORIGIN"/>
+		</section>
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+</section>
